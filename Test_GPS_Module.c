@@ -954,7 +954,7 @@ int main(int argc, char *argv[])
    GPS_SetMeasurementRate(2);
 
    while(1) {
-      GetFullGPSPosition();
+      GetGPSPosition();
       delay(1000); 
    }
 
