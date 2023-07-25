@@ -30,7 +30,6 @@
 //System Includes
 //-----------------------------------------------------------------//
 #include <stdio.h>
-#include <stdlib.h>
 #include <signal.h>
 #include <errno.h>
 #include <ctype.h>
@@ -50,6 +49,10 @@
 #include "gps_module.h"
 
 #include "owa5x/owerrors.h"
+
+//Additional
+#include <time.h>
+
 
 //-----------------------------------------------------------------//
 //Defines
@@ -78,6 +81,17 @@ FILE *logfd = NULL;
 //
 
 /* functions definition */
+
+
+void delay(int milli_seconds)
+{
+    // Storing start time
+    clock_t start_time = clock();
+ 
+    // looping till required time is not achieved
+    while (clock() < start_time + milli_seconds)
+        ;
+}
 
 //-----------------------------------------------------------------//
 // Function: GetGPSPosition()
