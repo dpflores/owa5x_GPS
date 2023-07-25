@@ -940,6 +940,7 @@ int main(int argc, char *argv[])
 
    while(1) {
       GetFullGPSPosition();
+      delay(1000); 
    }
 
    FinalizeApplication = TRUE;
